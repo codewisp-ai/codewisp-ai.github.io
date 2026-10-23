@@ -24,7 +24,7 @@ The application is specifically engineered to highlight:
 - `src/components/`:
   - `Navbar.tsx`: Responsive top navbar with glassmorphism, mobile menu drawer, and active section tracking.
   - `Hero.tsx`: Headline, quick metrics badges, visual system blueprint card, and CTAs.
-  - `ArchitectureExplorer.tsx`: Interactive architecture blueprint viewer with step-by-step request flow simulation for SystemSketch, CatalogForge, CiviScan, and VortexMQ.
+  - `ArchitectureExplorer.tsx`: Interactive architecture blueprint viewer with step-by-step request flow simulation for SystemSketch, CatalogForge, CiviScan, VortexMQ, SignalRank AI, and AegisGate.
   - `ProjectsSection.tsx`: Filterable project grid (`All`, `AI Integrations`, `Microservices & DB`, `Distributed & Queues`).
   - `ProjectModal.tsx`: Technical inspection modal with system design specs, SLA benchmarks, and GitHub repository links.
   - `ExperienceSection.tsx`: Career and hackathon timeline.
@@ -32,6 +32,7 @@ The application is specifically engineered to highlight:
   - `LiveTelemetryConsole.tsx`: Interactive real-time log simulator for cache hits, Gemini Vision inference, and traffic spike injection.
   - `ContactSection.tsx`: Contact form, one-click copy email button, and platform profiles.
   - `Footer.tsx`: Modern footer with back-to-top button.
+  - `Icons.tsx`: Reusable SVG icons for GitHub, LinkedIn, and brand symbols.
 - `src/data/portfolioData.ts`: Central source of truth for all projects, experiences, and metrics.
 - `src/types/index.ts`: TypeScript interfaces for all data structures.
 
