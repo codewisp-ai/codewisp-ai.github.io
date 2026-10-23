@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Terminal, Play, Pause, Trash2, Zap, Radio, CheckCircle, ShieldAlert } from 'lucide-react';
+import { Terminal, Play, Pause, Trash2, Zap, Radio } from 'lucide-react';
 
 interface LogEntry {
   id: string;

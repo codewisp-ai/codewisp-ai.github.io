@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Copy, Check, Send, Award, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, Copy, Check, Send, Award } from 'lucide-react';
+import { Github, Linkedin } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const ContactSection: React.FC = () => {

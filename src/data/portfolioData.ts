@@ -1,4 +1,4 @@
-import { Project, ExperienceItem, SkillCategory } from '../types';
+import type { Project, ExperienceItem, SkillCategory } from '../types';
 
 export const PERSONAL_INFO = {
   name: "Anmol Maheshwari",

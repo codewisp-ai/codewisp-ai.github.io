@@ -1,6 +1,9 @@
 import React from 'react';
-import { Terminal, Github, Linkedin, Award, ArrowUp, Heart } from 'lucide-react';
+import { Terminal, Award, ArrowUp } from 'lucide-react';
+import { Github, Linkedin } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -74,7 +77,7 @@ export const Footer: React.FC = () => {
         {/* Bottom line */}
         <div className="mt-8 pt-6 border-t border-slate-900/80 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 font-mono gap-2 text-center sm:text-left">
           <span>
-            © {new Date().getFullYear()} Anmol Maheshwari. Built with React, TypeScript & Vite.
+            © {CURRENT_YEAR} Anmol Maheshwari. Built with React, TypeScript & Vite.
           </span>
           <span>
             Spotlighting SystemSketch, CatalogForge, CiviScan & VortexMQ

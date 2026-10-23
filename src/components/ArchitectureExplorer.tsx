@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layers, ArrowRight, CheckCircle2, Shield, Activity, Database, Cpu, Zap, Radio, Server, ExternalLink } from 'lucide-react';
+import { Layers, CheckCircle2, Shield, Activity, Database, Cpu, Zap, Radio, Server, ExternalLink } from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
 
 export const ArchitectureExplorer: React.FC = () => {

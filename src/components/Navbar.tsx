@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Terminal, Github, Linkedin, ExternalLink, Cpu } from 'lucide-react';
+import { Menu, X, Terminal, Cpu } from 'lucide-react';
+import { Github, Linkedin } from './Icons';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface NavbarProps {

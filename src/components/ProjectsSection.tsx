@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Layers, Github, ExternalLink, ArrowRight, Database, Cpu, Radio, Shield, Sparkles } from 'lucide-react';
-import { Project } from '../types';
+import { Layers, ArrowRight, Database, Cpu, Radio, Sparkles } from 'lucide-react';
+import { Github } from './Icons';
+import type { Project } from '../types';
 import { PROJECTS } from '../data/portfolioData';
 import { ProjectModal } from './ProjectModal';
 
