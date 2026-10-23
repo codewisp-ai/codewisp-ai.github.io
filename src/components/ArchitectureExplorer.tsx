@@ -41,6 +41,8 @@ export const ArchitectureExplorer: React.FC = () => {
             { id: 'catalogforge', label: 'CatalogForge', badge: 'Redis + ACID', icon: Database },
             { id: 'civiscan', label: 'CiviScan', badge: 'Gemini Vision AI', icon: Zap },
             { id: 'vortexmq', label: 'VortexMQ', badge: 'Redis Streams', icon: Radio },
+            { id: 'signalrank', label: 'SignalRank AI', badge: 'Vector + LLM', icon: Cpu },
+            { id: 'aegisgate', label: 'AegisGate', badge: 'Lua HTB Limiter', icon: Shield },
           ].map((tab) => {
             const Icon = tab.icon;
             const isSelected = selectedId === tab.id;
