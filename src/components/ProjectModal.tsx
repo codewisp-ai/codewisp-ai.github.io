@@ -42,9 +42,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
         {/* Modal Header */}
         <div className="space-y-2 pr-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/70 border border-cyan-800 text-cyan-400 text-xs font-mono">
-            <Cpu className="w-3.5 h-3.5" />
-            <span>{project.category.toUpperCase()} • PRODUCTION ARCHITECTURE</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/70 border border-cyan-800 text-cyan-400 text-xs font-mono">
+              <Cpu className="w-3.5 h-3.5" />
+              <span>{project.category.toUpperCase()} • PRODUCTION ARCHITECTURE</span>
+            </div>
+            {project.status && (
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-950/80 border border-amber-600/60 text-amber-300 text-xs font-mono">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                <span>{project.status}</span>
+              </div>
+            )}
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
             {project.title}

@@ -87,9 +87,17 @@ export const ProjectsSection: React.FC = () => {
                 
                 {/* Top Badge Row */}
                 <div className="flex items-center justify-between gap-2">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">
-                    {getCategoryIcon(project.category)}
-                    <span className="capitalize">{project.category}</span>
+                  <div className="flex items-center gap-2">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">
+                      {getCategoryIcon(project.category)}
+                      <span className="capitalize">{project.category}</span>
+                    </div>
+                    {project.status && (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-mono bg-amber-950/80 text-amber-300 border border-amber-700/60">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                        {project.status}
+                      </span>
+                    )}
                   </div>
 
                   {project.metrics[0] && (

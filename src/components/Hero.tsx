@@ -1,8 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Terminal, Database, Cpu, ShieldCheck, Zap, Award, Layers } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
+const WORDS = [
+  'scalable backends.',
+  'clean APIs.',
+  'event-driven queues.',
+  'practical AI tools.'
+];
+
 export const Hero: React.FC = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const fullWord = WORDS[currentWordIndex];
+    const speed = isDeleting ? 30 : 65;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (currentText.length < fullWord.length) {
+          setCurrentText(fullWord.slice(0, currentText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), 1800);
+        }
+      } else {
+        if (currentText.length > 0) {
+          setCurrentText(fullWord.slice(0, currentText.length - 1));
+        } else {
+          setIsDeleting(false);
+          setCurrentWordIndex((prev) => (prev + 1) % WORDS.length);
+        }
+      }
+    }, speed);
+
+    return () => clearTimeout(timeout);
+  }, [currentText, isDeleting, currentWordIndex]);
+
   return (
     <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background Glow & Grid Effects */}
@@ -24,18 +59,17 @@ export const Hero: React.FC = () => {
               <span>Full Stack & Backend Systems Engineer • 9.8 CGPA</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
-              Building Resilient <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
-                Microservices
-              </span> & <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-300 to-rose-400">
-                Production AI
-              </span> Architectures.
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight min-h-[3.5rem] sm:min-h-[5rem] lg:min-h-[6.5rem]">
+              Building reliable systems, <br className="hidden sm:inline" />
+              fast APIs &amp;{' '}
+              <span className="text-cyan-400 font-mono inline-block">
+                {currentText}
+                <span className="inline-block w-0.5 h-6 sm:h-8 lg:h-9 bg-cyan-400 ml-1 translate-y-1 animate-pulse" />
+              </span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-              Hey, I'm <span className="text-white font-semibold">{PERSONAL_INFO.name}</span>. I design high-throughput distributed systems, event-driven pipelines (Redis Streams), ACID transactional databases, and production multi-modal AI workflows like <span className="text-cyan-400 font-medium">SystemSketch</span>, <span className="text-sky-300 font-medium">CatalogForge</span>, and <span className="text-purple-300 font-medium">CiviScan</span>.
+              Hey, I'm <span className="text-white font-semibold">{PERSONAL_INFO.name}</span>. I'm a Computer Engineering student at AMU who loves building backends, working with databases and Redis Streams, and shipping practical AI tools like <span className="text-cyan-400 font-medium">SystemSketch</span>, <span className="text-sky-300 font-medium">CatalogForge</span>, and <span className="text-purple-300 font-medium">CiviScan</span>.
             </p>
 
             {/* CTAs */}
@@ -147,12 +181,15 @@ export const Hero: React.FC = () => {
                   <div className="flex items-center justify-between text-emerald-400 font-semibold mb-1">
                     <span className="flex items-center gap-1.5">
                       <ShieldCheck className="w-3.5 h-3.5" />
-                      VortexMQ & AegisGate
+                      VortexMQ &amp; AegisGate
                     </span>
-                    <span className="text-[10px] text-emerald-400/80 bg-emerald-950/60 px-1.5 py-0.5 rounded">10k+ QPS</span>
+                    <span className="text-[10px] text-amber-400/90 bg-amber-950/60 border border-amber-800/40 px-1.5 py-0.5 rounded flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                      Building AegisGate
+                    </span>
                   </div>
                   <p className="text-[11px] text-slate-400 leading-normal">
-                    Redis Streams consumer groups, XAUTOCLAIM recovery, and atomic Redis Lua HTB rate limiting.
+                    Redis Streams consumer groups, XAUTOCLAIM recovery, and actively building atomic Redis Lua HTB rate limiting.
                   </p>
                 </div>
               </div>

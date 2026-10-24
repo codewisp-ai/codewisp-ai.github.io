@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   quickStats: [
     { label: "CGPA (3rd Year)", value: "9.8 / 10" },
     { label: "Hackathon Podiums", value: "3 Wins" },
-    { label: "DSA Problems (C++)", value: "200+ Solved" },
+    { label: "DSA Problems (C++)", value: "300+ Solved" },
     { label: "Event Pipeline P99", value: "<15ms Latency" },
   ]
 };
@@ -296,18 +296,19 @@ export const PROJECTS: Project[] = [
   {
     id: "aegisgate",
     title: "AegisGate",
-    tagline: "High-Concurrency API Gateway with Atomic Redis Lua HTB Rate Limiting",
+    tagline: "High-Concurrency API Gateway with Atomic Redis Lua HTB Rate Limiting (In Active Development)",
     category: "microservices",
     featured: false,
+    status: "Currently Building",
     tags: ["FastAPI", "PostgreSQL", "Redis Lua", "HTB Rate Limiting", "Docker", "Async Engine"],
     githubUrl: "https://github.com/codewisp-ai",
     highlights: [
-      "Engineered high-concurrency API Gateway utilizing atomic Redis Lua Hierarchical Token Bucket (HTB) rate limiter with elastic burst borrowing.",
-      "Asynchronous PostgreSQL database layer utilizing asyncpg and SQLAlchemy for multi-tenant rate quota management and transaction logging.",
-      "Comprehensive concurrency testing validating zero rate-limit bypasses under heavy parallel burst traffic.",
-      "Docker Compose orchestration with healthcheck-gated dependency startup."
+      "Currently building a high-concurrency API Gateway utilizing atomic Redis Lua Hierarchical Token Bucket (HTB) rate limiting with elastic burst borrowing.",
+      "Developing an asynchronous PostgreSQL layer with asyncpg and SQLAlchemy for multi-tenant rate quota management and transaction logging.",
+      "Benchmarking concurrency to validate zero rate-limit bypasses under heavy parallel burst traffic.",
+      "Configuring Docker Compose orchestration with healthcheck-gated dependency startup."
     ],
-    architectureOverview: "Low-overhead API proxy enforcing strict per-tenant QoS SLAs using single-roundtrip Lua scripts in Redis to prevent race conditions during high-volume DDoS and spike scenarios.",
+    architectureOverview: "Work-in-progress API gateway enforcing strict per-tenant QoS SLAs using single-roundtrip Lua scripts in Redis to prevent race conditions during high-volume DDoS and traffic spikes.",
     architectureFlow: [
       {
         step: 1,
@@ -347,7 +348,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     role: "Full Stack Developer (AI-Focused) Intern",
     company: "Bilvaleaf Private Limited",
-    location: "Remote / Hybrid",
+    location: "Fully Remote",
     period: "June 2026 – Present",
     type: "internship",
     achievements: [
@@ -361,7 +362,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     role: "3rd Place — System Collapse Hackathon",
     company: "SystemSketch Project",
-    location: "National Hackathon",
+    location: "Hackathon",
     period: "2026",
     type: "hackathon",
     achievements: [
@@ -374,7 +375,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     role: "2nd Place — Garage Inference Hackathon",
     company: "Atomic PR Surgeon (Solo)",
-    location: "National Hackathon",
+    location: "Hackathon",
     period: "2026",
     type: "hackathon",
     achievements: [
@@ -406,7 +407,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     achievements: [
       "Outstanding Academic Record with a 9.8 / 10 CGPA.",
       "Rigorous core coursework: Operating Systems, Computer Networks, Database Management Systems, Data Structures & Algorithms, and Self-Study in Large-Scale System Design.",
-      "Solved 200+ Competitive Programming and Data Structure & Algorithm problems on LeetCode with C++ as the primary language."
+      "Solved 300+ Competitive Programming and Data Structure & Algorithm problems on LeetCode with C++ as the primary language."
     ],
     technologies: ["C++", "DSA", "Operating Systems", "Computer Networks", "DBMS", "System Design"]
   }

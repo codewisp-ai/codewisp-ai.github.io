@@ -42,7 +42,7 @@ export const ArchitectureExplorer: React.FC = () => {
             { id: 'civiscan', label: 'CiviScan', badge: 'Gemini Vision AI', icon: Zap },
             { id: 'vortexmq', label: 'VortexMQ', badge: 'Redis Streams', icon: Radio },
             { id: 'signalrank', label: 'SignalRank AI', badge: 'Vector + LLM', icon: Cpu },
-            { id: 'aegisgate', label: 'AegisGate', badge: 'Lua HTB Limiter', icon: Shield },
+            { id: 'aegisgate', label: 'AegisGate', badge: 'Building • Lua HTB', icon: Shield },
           ].map((tab) => {
             const Icon = tab.icon;
             const isSelected = selectedId === tab.id;
@@ -74,8 +74,14 @@ export const ArchitectureExplorer: React.FC = () => {
           {/* Top Canvas Bar */}
           <div className="px-6 py-4 bg-slate-900/80 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4">
             <div>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <h3 className="text-xl font-bold text-white">{selectedProject.title}</h3>
+                {selectedProject.status && (
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono bg-amber-950/80 text-amber-300 border border-amber-600/50">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                    {selectedProject.status}
+                  </span>
+                )}
                 <span className="text-xs font-mono px-2.5 py-0.5 rounded-md bg-cyan-950 border border-cyan-800 text-cyan-400">
                   {selectedProject.tagline}
                 </span>

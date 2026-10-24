@@ -25,6 +25,7 @@ export interface Project {
     storage: string;
   };
   featured: boolean;
+  status?: string;
 }
 
 export interface ExperienceItem {
